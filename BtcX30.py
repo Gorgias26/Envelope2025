@@ -1,6 +1,5 @@
 import datetime
 import sys
-import ccxt
 import json
 import os
 import time
