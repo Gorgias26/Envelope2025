@@ -59,7 +59,7 @@ crontab -r
 (crontab -l 2>/dev/null; echo "*/5 * * * * bash /home/ubuntu/Envelope2025/BtcX1.sh >> /home/ubuntu/Envelope2025/log/BtcX1.log") | crontab -
 (crontab -l 2>/dev/null; echo "0-59/5 * * * * sleep 30 && bash /home/ubuntu/Envelope2025/BtcX2.sh >> /home/ubuntu/Envelope2025/log/BtcX2.log") | crontab -
 (crontab -l 2>/dev/null; echo "1-59/5 * * * * bash /home/ubuntu/Envelope2025/BtcX5.sh >> /home/ubuntu/Envelope2025/log/BtcX5.log") | crontab -
-(crontab -l 2>/dev/null; echo "1-59/5 * * * * sleep 30 && bash /home/ubuntu/Envelope2025/BtcX10.sh >> /home/ubuntu/Envelope2025/ log/BtcX10.log") | crontab -
+(crontab -l 2>/dev/null; echo "1-59/5 * * * * sleep 30 && bash /home/ubuntu/Envelope2025/BtcX10.sh >> /home/ubuntu/Envelope2025/log/BtcX10.log") | crontab -
 (crontab -l 2>/dev/null; echo "2-59/5 * * * * bash /home/ubuntu/Envelope2025/BtcX20.sh >> /home/ubuntu/Envelope2025/log/BtcX20.log") | crontab -
 (crontab -l 2>/dev/null; echo "2-59/5 * * * * sleep 30 && bash /home/ubuntu/Envelope2025/BtcX30.sh >> /home/ubuntu/Envelope2025/log/BtcX30.log") | crontab -
 (crontab -l 2>/dev/null; echo "3-59/5 * * * * bash /home/ubuntu/Envelope2025/AltX3High.sh >> /home/ubuntu/Envelope2025/log/AltX3High.log") | crontab -
