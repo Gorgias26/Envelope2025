@@ -1,3 +1,3 @@
 #!/bin/bash
 source "Envelope2025/.venv/bin/activate"
-python3 BtcX10.py
+python3 Envelope2025/BtcX10.py

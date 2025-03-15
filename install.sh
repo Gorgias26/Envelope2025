@@ -48,7 +48,14 @@ source .venv/bin/activate
 pip install -r requirements.txt
 git update-index --assume-unchanged secret.py
 
-# Configuration des tâches cron
+# Création des dossiers et fichiers log
+mkdir -p log
+touch log/BtcX1.log log/BtcX2.log log/BtcX5.log log/BtcX10.log log/BtcX20.log log/BtcX30.log log/AltX3High.log log/AltX3Traling.log
+
+# Suppression des anciennes entrées cron
+crontab -r
+
+# Ajout des nouvelles entrées cron
 (crontab -l 2>/dev/null; echo "*/5 * * * * bash Envelope2025/BtcX1.sh >> log/BtcX1.log") | crontab -
 (crontab -l 2>/dev/null; echo "0-59/5 * * * * sleep 30 && bash Envelope2025/BtcX2.sh >> log/BtcX2.log") | crontab -
 (crontab -l 2>/dev/null; echo "1-59/5 * * * * bash Envelope2025/BtcX5.sh >> log/BtcX5.log") | crontab -
@@ -57,8 +64,10 @@ git update-index --assume-unchanged secret.py
 (crontab -l 2>/dev/null; echo "2-59/5 * * * * sleep 30 && bash Envelope2025/BtcX30.sh >> log/BtcX30.log") | crontab -
 (crontab -l 2>/dev/null; echo "3-59/5 * * * * bash Envelope2025/AltX3High.sh >> log/AltX3High.log") | crontab -
 (crontab -l 2>/dev/null; echo "3-59/5 * * * * sleep 30 && bash Envelope2025/AltX3Traling.sh >> log/AltX3Traling.log") | crontab -
+
 cd ..
 
+# Attribution des permissions d'exécution
 chmod +x /home/ubuntu/Envelope2025/BtcX1.sh
 chmod +x /home/ubuntu/Envelope2025/BtcX2.sh
 chmod +x /home/ubuntu/Envelope2025/BtcX5.sh
@@ -67,4 +76,5 @@ chmod +x /home/ubuntu/Envelope2025/BtcX20.sh
 chmod +x /home/ubuntu/Envelope2025/BtcX30.sh
 chmod +x /home/ubuntu/Envelope2025/AltX3High.sh
 chmod +x /home/ubuntu/Envelope2025/AltX3Traling.sh
+
 echo "Installation terminée !"
