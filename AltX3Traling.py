@@ -42,7 +42,7 @@ async def main():
             "src": "high",
             "ma_base_window": 7,
             "envelopes": [0.07, 0.1, 0.15],
-            "size": 0.1,
+            "size": 0.2,
             "trailing": 3,
             "sides": ["long", "short"],
         },
@@ -50,7 +50,7 @@ async def main():
             "src": "high",
             "ma_base_window": 7,
             "envelopes": [0.07, 0.1, 0.15],
-            "size": 0.1,
+            "size": 0.2,
             "trailing": 3,
             "sides": ["long", "short"],
         },
@@ -58,7 +58,7 @@ async def main():
             "src": "high",
             "ma_base_window": 7,
             "envelopes": [0.07, 0.1, 0.15],
-            "size": 0.1,
+            "size": 0.2,
             "trailing": 3,
             "sides": ["long"],
         },
@@ -66,7 +66,7 @@ async def main():
             "src": "high",
             "ma_base_window": 7,
             "envelopes": [0.07, 0.1, 0.15],
-            "size": 0.1,
+            "size": 0.2,
             "trailing": 3,
             "sides": ["long"],
         },
@@ -74,7 +74,7 @@ async def main():
             "src": "high",
             "ma_base_window": 7,
             "envelopes": [0.07, 0.1, 0.15],
-            "size": 0.1,
+            "size": 0.2,
             "trailing": 3,
             "sides": ["long", "short"],
         },
@@ -103,7 +103,7 @@ async def main():
         for pair in df_list:
             current_params = trading_params[pair]
             df = df_list[pair]
-            if current_params["src"] == "close":
+            if current_params["src"] == "high":
                 src = df["close"]
             elif current_params["src"] == "ohlc4":
                 src = (df["close"] + df["high"] + df["low"] + df["open"]) / 4
