@@ -1,5 +1,7 @@
 import datetime
 import sys
+import json
+import os
 import time
 
 sys.path.append("./Envelope2025")
@@ -21,7 +23,7 @@ async def main():
     hedge_mode = True # Warning, set to False if you are in one way mode
 
     # Charger les IDs des trailing stops existants
-    trailing_stops_file = "trailing_stopsHigh.json"
+    trailing_stops_file = "trailing_stops.json"
     trailing_stops = {}
     if os.path.exists(trailing_stops_file):
         try:
