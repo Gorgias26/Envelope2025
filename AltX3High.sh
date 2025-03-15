@@ -1,3 +1,3 @@
 #!/bin/bash
-source "Envelope2025/.venv/bin/activate"
-python3 Envelope2025/AltX3High.py
+source /home/ubuntu/Envelope2025/.venv/bin/activate
+python3 /home/ubuntu/Envelope2025/AltX3High.py
