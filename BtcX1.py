@@ -3,7 +3,7 @@ import sys
 import json
 import os
 import time
-sys.path.append("./Live-Tools-V2-main 2025")
+sys.path.append("./Envelope2025")
 
 import asyncio
 from utilities.bitget_perp import PerpBitget
@@ -63,15 +63,6 @@ async def main():
         password=account["password"],
     )
 
-    exchange1 = ccxt.bitget({
-        'apiKey': account["public_api"],
-        'secret': account["secret_api"],
-        'password': account["password"],
-        'enableRateLimit': True,
-        'options': {
-        'defaultType': 'swap',
-        }
-    })
 
 
     invert_side = {"long": "sell", "short": "buy"}
@@ -439,7 +430,6 @@ async def main():
         print(
             f"--- Execution finished at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ---"
         )
-        await asyncio.sleep(300)  # Attendre 5 minutes de manière asynchrone
     except Exception as e:
         await exchange.close()
         print(f"Erreur rencontrée: {e}")

@@ -57,6 +57,5 @@ git update-index --assume-unchanged secret.py
 (crontab -l 2>/dev/null; echo "2-59/5 * * * * sleep 30 && bash Envelope2025/BtcX30.sh >> log/BtcX30.log 2>&1") | crontab -
 (crontab -l 2>/dev/null; echo "3-59/5 * * * * bash Envelope2025/AltX3High.sh >> log/AltX3High.log 2>&1") | crontab -
 (crontab -l 2>/dev/null; echo "3-59/5 * * * * sleep 30 && bash Envelope2025/AltX3Traling.sh >> log/AltX3Traling.log 2>&1") | crontab -
-
 cd ..
 echo "Installation terminée !"

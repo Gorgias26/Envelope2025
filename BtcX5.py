@@ -3,7 +3,7 @@ import sys
 import json
 import os
 import time
-sys.path.append("./Live-Tools-V2-main 2025")
+sys.path.append("./Envelope2025")
 
 import asyncio
 from utilities.bitget_perp import PerpBitget
@@ -62,16 +62,6 @@ async def main():
         secret_api=account["secret_api"],
         password=account["password"],
     )
-
-    exchange1 = ccxt.bitget({
-        'apiKey': account["public_api"],
-        'secret': account["secret_api"],
-        'password': account["password"],
-        'enableRateLimit': True,
-        'options': {
-        'defaultType': 'swap',
-        }
-    })
 
 
     invert_side = {"long": "sell", "short": "buy"}

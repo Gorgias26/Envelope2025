@@ -2,7 +2,7 @@ import datetime
 import sys
 import time
 
-sys.path.append("./Live-Tools-V2")
+sys.path.append("./Envelope2025")
 
 import asyncio
 from utilities.bitget_perp import PerpBitget
