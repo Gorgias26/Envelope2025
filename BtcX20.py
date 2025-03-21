@@ -39,11 +39,11 @@ async def main():
             trailing_stops = {}
 
     margin_mode = "crossed"  # isolated or crossed
-    leverage = 5
+    leverage = 20
     hedge_mode = True # Warning, set to False if you are in one way mode
     tf = "1h"
     sl = 0.06
-    trailing = 20
+    trailing = 3
     trailing_step = 0.04
     trading_params = {
         "BTC/USDT": {
