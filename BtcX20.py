@@ -43,7 +43,7 @@ async def main():
     hedge_mode = True # Warning, set to False if you are in one way mode
     tf = "1h"
     sl = 0.06
-    trailing = 3
+    trailing = 20
     trailing_step = 0.04
     trading_params = {
         "BTC/USDT": {
