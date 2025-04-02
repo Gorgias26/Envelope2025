@@ -174,12 +174,12 @@ async def main():
 
             # Place SL
             if position.side == "long":
-                sl_side = "sell"
+                sl_side = "buy"
                 sl_price = exchange.price_to_precision(
                     position.pair, position.entry_price * (1 - sl)
                 )
             elif position.side == "short":
-                sl_side = "buy"
+                sl_side = "sell"
                 sl_price = exchange.price_to_precision(
                     position.pair, position.entry_price * (1 + sl)
                 )

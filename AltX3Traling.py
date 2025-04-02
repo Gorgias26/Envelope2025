@@ -35,7 +35,7 @@ async def main():
 
     tf = "1h"
     sl = 0.95
-    trailing = 3
+    trailing = 5
     trailing_step = 0.04
     trading_params = {
         "ONDO/USDT": {
@@ -196,12 +196,12 @@ async def main():
 
             # Place SL
             if position.side == "long":
-                sl_side = "sell"
+                sl_side = "buy"
                 sl_price = exchange.price_to_precision(
                     position.pair, position.entry_price * (1 - sl)
                 )
             elif position.side == "short":
-                sl_side = "buy"
+                sl_side = "sell"
                 sl_price = exchange.price_to_precision(
                     position.pair, position.entry_price * (1 + sl)
                 )
@@ -238,7 +238,7 @@ async def main():
                     params = {
                         'oneWayMode': False,
                         'reduceOnly': True,
-                        'trailingTriggerPrice': exchange.price_to_precision(pair, row[f"ma_low_{i+1}"]),
+                        'trailingTriggerPrice': StopPrice,
                         'trailingPercent': trailing,
                         'triggerType': "fill_price"
                     }
@@ -256,7 +256,7 @@ async def main():
                     params = {
                         'oneWayMode': False,
                         'reduceOnly': True,
-                        'trailingTriggerPrice': exchange.price_to_precision(pair, row[f"ma_low_{i+1}"]),
+                        'trailingTriggerPrice': StopPrice,
                         'trailingPercent': trailing,
                         'triggerType': "fill_price"
                     }

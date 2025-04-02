@@ -39,7 +39,7 @@ async def main():
             trailing_stops = {}
 
     margin_mode = "crossed"  # isolated or crossed
-    leverage = 10
+    leverage = 5
     hedge_mode = True # Warning, set to False if you are in one way mode
     tf = "1h"
     sl = 0.06
@@ -174,12 +174,12 @@ async def main():
 
             # Place SL
             if position.side == "long":
-                sl_side = "sell"
+                sl_side = "buy"
                 sl_price = exchange.price_to_precision(
                     position.pair, position.entry_price * (1 - sl)
                 )
             elif position.side == "short":
-                sl_side = "buy"
+                sl_side = "sell"
                 sl_price = exchange.price_to_precision(
                     position.pair, position.entry_price * (1 + sl)
                 )
