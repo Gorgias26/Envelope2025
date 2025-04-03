@@ -29,7 +29,7 @@ async def main():
     account = ACCOUNTS["BtcX1"]
 
     # Charger les IDs des trailing stops existants
-    trailing_stops_file = "trailing_stops.json"
+    trailing_stops_file = "trailing_stopsBTC1.json"
     trailing_stops = {}
     if os.path.exists(trailing_stops_file):
         try:
