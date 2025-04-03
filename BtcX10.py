@@ -211,6 +211,7 @@ async def main():
 
                 # Placer le nouveau trailing stop
                 if position.side == "long":
+                    sl_side = "sell"
                     StopPrice = exchange.price_to_precision(position.pair, position.entry_price * (1 + trailing_step))
                     params = {
                         'oneWayMode': False,
@@ -229,6 +230,7 @@ async def main():
                     # Sauvegarder le nouvel ID
                     trailing_stops[position.pair] = new_trailing['info']['orderId']  # Accès à l'ID via info.orderId
                 elif position.side == "short":
+                    sl_side = "buy"
                     StopPrice = exchange.price_to_precision(position.pair, position.entry_price * (1 - trailing_step))
                     params = {
                         'oneWayMode': False,
